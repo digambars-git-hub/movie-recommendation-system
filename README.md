@@ -9,17 +9,11 @@ It uses:
 
 ## 🌐 Live Demo
 
-Streamlit App Link: **`[ADD_YOUR_STREAMLIT_LINK_HERE]`**
-
-Example:
-`https://your-app-name.streamlit.app`
+Streamlit App Link: **`[Streamlit link](https://movie-recommendation-system-digambar.streamlit.app/)`**
 
 ## 📦 Dataset
 
-Dataset Link: **`[ADD_YOUR_DATASET_LINK_HERE]`**
-
-Example:
-`https://www.kaggle.com/datasets/tmdb/tmdb-movie-metadata`
+Dataset Link: **`[Dataset link](https://drive.google.com/uc?id=1cCkwiVv4mgfl20ntgY3n4yApcWqqZQe6)`**
 
 ---
 
