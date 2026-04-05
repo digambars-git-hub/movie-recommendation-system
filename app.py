@@ -29,15 +29,6 @@ st.markdown(
         letter-spacing: 0.2px;
     }
 
-    .panel {
-        padding: 1.1rem 1rem;
-        border-radius: 16px;
-        background: rgba(15, 23, 42, 0.62);
-        border: 1px solid rgba(148, 163, 184, 0.25);
-        margin-bottom: 1rem;
-        backdrop-filter: blur(6px);
-    }
-
     </style>
     """,
     unsafe_allow_html=True,
@@ -59,11 +50,9 @@ except Exception as exc:
     st.error(f"Could not initialize the recommendation engine: {exc}")
     st.stop()
 
-st.markdown("<div class='panel'>", unsafe_allow_html=True)
 movie_input = st.text_input("Movie name", placeholder="Example: Avatar")
 top_n = st.slider("How many recommendations?", min_value=5, max_value=20, value=10, step=1)
 recommend_clicked = st.button("Recommend Movies", use_container_width=True)
-st.markdown("</div>", unsafe_allow_html=True)
 
 if recommend_clicked:
     try:
