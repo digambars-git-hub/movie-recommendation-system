@@ -9,11 +9,11 @@ It uses:
 
 ## 🌐 Live Demo
 
-Streamlit App Link: **`[Streamlit link](https://movie-recommendation-system-digambar.streamlit.app/)`**
+Streamlit App Link: **`https://movie-recommendation-system-digambar.streamlit.app/`**
 
 ## 📦 Dataset
 
-Dataset Link: **`[Dataset link](https://drive.google.com/uc?id=1cCkwiVv4mgfl20ntgY3n4yApcWqqZQe6)`**
+Dataset Link: **`https://drive.google.com/uc?id=1cCkwiVv4mgfl20ntgY3n4yApcWqqZQe6`**
 
 ---
 
