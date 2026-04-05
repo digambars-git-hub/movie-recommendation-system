@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import streamlit as st
 
-from movie_recommender import build_recommender, resolve_dataset_path, run_preflight_checks
+from movie_recommender import build_recommender, resolve_dataset_path
 
 st.set_page_config(
     page_title="Movie Matchmaker",
@@ -38,15 +38,6 @@ st.markdown(
         backdrop-filter: blur(6px);
     }
 
-    .pill {
-        display: inline-block;
-        padding: 0.24rem 0.6rem;
-        border-radius: 999px;
-        border: 1px solid rgba(52, 211, 153, 0.55);
-        color: #34d399;
-        background: rgba(15, 118, 110, 0.14);
-        font-size: 0.82rem;
-    }
     </style>
     """,
     unsafe_allow_html=True,
@@ -55,30 +46,18 @@ st.markdown(
 st.title("🎬 Movie Matchmaker")
 st.caption("Type a movie title and get close-content recommendations using TF-IDF + cosine similarity.")
 
-dataset_path = resolve_dataset_path()
-issues = run_preflight_checks(dataset_path)
-
-with st.container():
-    st.markdown("<div class='panel'>", unsafe_allow_html=True)
-    st.subheader("✅ Deployment Checkpoints")
-    st.write(f"Dataset path: `{dataset_path}`")
-
-    if issues:
-        for issue in issues:
-            st.error(issue)
-        st.stop()
-
-    st.markdown("<span class='pill'>All core checks passed</span>", unsafe_allow_html=True)
-    st.markdown("</div>", unsafe_allow_html=True)
-
-
 @st.cache_resource(show_spinner=False)
 def load_recommender():
+    dataset_path = resolve_dataset_path()
     return build_recommender(dataset_path)
 
 
-with st.spinner("Building recommendation engine..."):
-    recommender = load_recommender()
+try:
+    with st.spinner("Building recommendation engine..."):
+        recommender = load_recommender()
+except Exception as exc:
+    st.error(f"Could not initialize the recommendation engine: {exc}")
+    st.stop()
 
 st.markdown("<div class='panel'>", unsafe_allow_html=True)
 movie_input = st.text_input("Movie name", placeholder="Example: Avatar")
