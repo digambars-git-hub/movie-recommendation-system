@@ -56,7 +56,7 @@ If any checkpoint fails, the app shows a clear error in the UI.
 ### 1. Clone and open project
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/digambars-git-hub/movie-recommendation-system.git
 cd movie-recommendation
 ```
 
